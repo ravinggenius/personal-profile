@@ -1,0 +1,32 @@
+{
+  "name": "personal-profile",
+  "description": "Static single-page site to introduce yourself to others",
+  "version": "1.0.0",
+  "author": "Thomas Ingram",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write '**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ravinggenius/personal-profile"
+  },
+  "dependencies": {
+    "gatsby": "^2.x.x",
+    "gatsby-plugin-manifest": "^2.x.x",
+    "gatsby-plugin-offline": "^2.x.x",
+    "gatsby-plugin-react-helmet": "^3.x.x",
+    "react": "^16.x.x",
+    "react-dom": "^16.x.x",
+    "react-helmet": "^5.x.x"
+  },
+  "devDependencies": {
+    "prettier": "^1.x.x"
+  }
+}
