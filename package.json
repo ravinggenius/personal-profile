@@ -25,6 +25,8 @@
     "gatsby-plugin-manifest": "^2.x.x",
     "gatsby-plugin-offline": "^2.x.x",
     "gatsby-plugin-react-helmet": "^3.x.x",
+    "gatsby-source-filesystem": "^2.x.x",
+    "gatsby-transformer-remark": "^1.x.x",
     "normalize.css": "^8.x.x",
     "react": "^16.x.x",
     "react-dom": "^16.x.x",

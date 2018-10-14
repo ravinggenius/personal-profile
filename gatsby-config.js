@@ -14,7 +14,16 @@ module.exports = {
 			}
 		},
 		'gatsby-plugin-offline',
-		'gatsby-plugin-react-helmet'
+		'gatsby-plugin-react-helmet',
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				name: 'data',
+				path: `${__dirname}/src/data`,
+				ignore: ['**/.*.md']
+			}
+		},
+		'gatsby-transformer-remark'
 	],
 	siteMetadata: {
 		title: 'Gatsby Default Starter'
