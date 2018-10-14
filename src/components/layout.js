@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 
+import 'normalize.css';
+
 import Header from './header';
-import './layout.css';
 
 const Layout = ({ children }) => (
 	<StaticQuery
