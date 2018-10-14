@@ -18,13 +18,17 @@
     "url": "https://github.com/ravinggenius/personal-profile"
   },
   "dependencies": {
+    "emotion": "^9.x.x",
+    "emotion-server": "^9.x.x",
     "gatsby": "^2.x.x",
+    "gatsby-plugin-emotion": "^2.x.x",
     "gatsby-plugin-manifest": "^2.x.x",
     "gatsby-plugin-offline": "^2.x.x",
     "gatsby-plugin-react-helmet": "^3.x.x",
     "normalize.css": "^8.x.x",
     "react": "^16.x.x",
     "react-dom": "^16.x.x",
+    "react-emotion": "^9.x.x",
     "react-helmet": "^5.x.x"
   },
   "devDependencies": {
