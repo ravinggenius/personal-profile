@@ -1,18 +1,18 @@
 import React from 'react';
 
-import Bio from './profile/bio';
 import Introduction from './profile/introduction';
 import Location from './profile/location';
 import Name from './profile/name';
 import Section from './section';
 
-const Profile = ({ bio, name, introduction, location }) => (
-	<Section>
+const Header = Section.withComponent('header');
+
+const Profile = ({ name, introduction, location }) => (
+	<Header>
 		<Name {...{ name }} />
 		<Introduction {...{ introduction }} />
 		<Location {...{ location }} />
-		<Bio {...{ bio }} />
-	</Section>
+	</Header>
 );
 
 export default Profile;

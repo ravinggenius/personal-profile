@@ -13,13 +13,10 @@ const ProfileQuery = () => (
 						introduction
 						location
 					}
-					htmlAst
 				}
 			}
 		`}
-		render={data => (
-			<Profile {...data.profile.frontmatter} bio={data.profile.htmlAst} />
-		)}
+		render={data => <Profile {...data.profile.frontmatter} />}
 	/>
 );
 
