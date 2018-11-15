@@ -8,6 +8,11 @@ const LayoutQuery = ({ children }) => (
 	<StaticQuery
 		query={graphql`
 			query SiteTitleQuery {
+				profile: markdownRemark(fields: { slug: { eq: "/profile" } }) {
+					frontmatter {
+						color
+					}
+				}
 				site {
 					siteMetadata {
 						title
@@ -16,7 +21,9 @@ const LayoutQuery = ({ children }) => (
 			}
 		`}
 		render={data => (
-			<Layout title={data.site.siteMetadata.title}>{children}</Layout>
+			<Layout {...data.profile.frontmatter} {...data.site.siteMetadata}>
+				{children}
+			</Layout>
 		)}
 	/>
 );

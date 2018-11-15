@@ -4,10 +4,10 @@ import Helmet from 'react-helmet';
 
 import 'normalize.css';
 
+import { generateSecondary } from '../utilities/color';
+
 const bodyStyles = css`
 	--angle: calc(90deg + 75deg);
-	--primary: darkslateblue;
-	--secondary: aquamarine;
 	background-attachment: fixed;
 	background-color: var(--primary);
 	background-image: linear-gradient(
@@ -26,7 +26,7 @@ const Main = styled.main`
 	width: 500px;
 `;
 
-const Layout = ({ children, title }) => (
+const Layout = ({ children, color, title }) => (
 	<Main>
 		<Helmet>
 			<html lang="en" />
@@ -35,8 +35,15 @@ const Layout = ({ children, title }) => (
 
 			<meta name="description" contents="Sample" />
 			<meta name="keywords" contents="sample, something" />
+			<meta name="theme-color" contents={color} />
 
-			<body className={bodyStyles} />
+			<body
+				className={bodyStyles}
+				css={`
+					--primary: ${color};
+					--secondary: ${generateSecondary(color)};
+				`}
+			/>
 		</Helmet>
 
 		{children}
