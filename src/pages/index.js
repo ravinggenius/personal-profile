@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from '../components/layout';
+import Layout from '../components/layout_query';
 import Bio from '../components/bio_query';
 import Profile from '../components/profile_query';
 import Socials from '../components/socials_query';

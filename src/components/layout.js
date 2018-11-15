@@ -1,5 +1,3 @@
-import { StaticQuery, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 import styled, { css } from 'react-emotion';
 import Helmet from 'react-helmet';
@@ -28,38 +26,21 @@ const Main = styled.main`
 	width: 500px;
 `;
 
-const Layout = ({ children }) => (
-	<StaticQuery
-		query={graphql`
-			query SiteTitleQuery {
-				site {
-					siteMetadata {
-						title
-					}
-				}
-			}
-		`}
-		render={data => (
-			<Main>
-				<Helmet>
-					<html lang="en" />
+const Layout = ({ children, title }) => (
+	<Main>
+		<Helmet>
+			<html lang="en" />
 
-					<title>{data.site.siteMetadata.title}</title>
+			<title>{title}</title>
 
-					<meta name="description" contents="Sample" />
-					<meta name="keywords" contents="sample, something" />
+			<meta name="description" contents="Sample" />
+			<meta name="keywords" contents="sample, something" />
 
-					<body className={bodyStyles} />
-				</Helmet>
+			<body className={bodyStyles} />
+		</Helmet>
 
-				{children}
-			</Main>
-		)}
-	/>
+		{children}
+	</Main>
 );
-
-Layout.propTypes = {
-	children: PropTypes.node.isRequired
-};
 
 export default Layout;
