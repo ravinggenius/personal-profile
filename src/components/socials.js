@@ -11,10 +11,10 @@ const Socials = ({ email, phone, socials }) => {
 			<Section>
 				<Phone display={phone} />
 				<Email {...{ email }} />
-				{socials.map(({ code, username }) => (
+				{socials.map(({ code, handle }) => (
 					<ThirdParty
-						{...{ code, username }}
-						key={`${code}-${username}`}
+						{...{ code, handle }}
+						key={`${code}-${handle}`}
 					/>
 				))}
 			</Section>

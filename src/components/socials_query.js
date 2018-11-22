@@ -13,7 +13,7 @@ const SocialsQuery = () => (
 						phone
 						socials {
 							code
-							username
+							handle
 						}
 					}
 				}
