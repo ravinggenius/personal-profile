@@ -12,7 +12,7 @@ const Email = ({ email }) => {
 	if (email) {
 		return (
 			<Inner css={iconStyles} {...{ email }}>
-				<FontAwesomeIcon icon={faEnvelope} />
+				<FontAwesomeIcon fixedWidth icon={faEnvelope} />
 				<Label>Email</Label>
 			</Inner>
 		);
