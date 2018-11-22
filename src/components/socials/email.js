@@ -4,13 +4,16 @@ import React from 'react';
 import styled from 'react-emotion';
 import Obfuscate from 'react-obfuscate';
 
+import { Label, iconStyles } from './third_party';
+
 const Inner = styled(Obfuscate)``;
 
 const Email = ({ email }) => {
 	if (email) {
 		return (
-			<Inner {...{ email }}>
+			<Inner css={iconStyles} {...{ email }}>
 				<FontAwesomeIcon icon={faEnvelope} />
+				<Label>Email</Label>
 			</Inner>
 		);
 	}

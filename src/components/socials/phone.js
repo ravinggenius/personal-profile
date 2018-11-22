@@ -5,6 +5,8 @@ import React from 'react';
 import styled from 'react-emotion';
 import Obfuscate from 'react-obfuscate';
 
+import { Label, iconStyles } from './third_party';
+
 const Anchor = styled(Obfuscate)``;
 
 const Phone = ({ display }) => {
@@ -13,8 +15,9 @@ const Phone = ({ display }) => {
 
 		if (telephone) {
 			return (
-				<Anchor tel={telephone}>
+				<Anchor css={iconStyles} tel={telephone}>
 					<FontAwesomeIcon icon={faPhone} />
+					<Label>Phone</Label>
 				</Anchor>
 			);
 		}
