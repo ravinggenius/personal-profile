@@ -9,28 +9,25 @@ import styled from 'react-emotion';
 
 const Anchor = styled.a``;
 
+const resolve = (code, handle) =>
+	({
+		facebook: [faFacebook, `https://www.facebook.com/${handle}`],
+		github: [faGithub, `https://www.facebook.com/${handle}`],
+		stackOverflow: [
+			faStackOverflow,
+			`https://stackoverflow.com/users/${handle}`
+		]
+	}[code]);
+
 const ThirdParty = ({ code, handle }) => {
-	switch (code) {
-		case 'facebook':
-			return (
-				<Anchor href={`https://www.facebook.com/${handle}`}>
-					<FontAwesomeIcon icon={faFacebook} />
-				</Anchor>
-			);
-		case 'github':
-			return (
-				<Anchor href={`https://github.com/${handle}`}>
-					<FontAwesomeIcon icon={faGithub} />
-				</Anchor>
-			);
-		case 'stackOverflow':
-			return (
-				<Anchor href={`https://stackoverflow.com/users/${handle}`}>
-					<FontAwesomeIcon icon={faStackOverflow} />
-				</Anchor>
-			);
-		default:
-			return null;
+	const [icon, href] = resolve(code, handle);
+
+	if (href) {
+		return (
+			<Anchor {...{ href }}>
+				<FontAwesomeIcon {...{ icon }} />
+			</Anchor>
+		);
 	}
 };
 
