@@ -8,6 +8,7 @@ import { generateSecondary } from '../utilities/color';
 
 const bodyStyles = css`
 	--angle: calc(90deg + 75deg);
+	--gutter: 20px;
 	background-attachment: fixed;
 	background-color: var(--primary);
 	background-image: linear-gradient(
@@ -16,14 +17,40 @@ const bodyStyles = css`
 		var(--primary) 30%,
 		var(--secondary) 100%
 	);
+	font-family: sans-serif;
 	min-height: 100vh;
+
+	> div#___gatsby {
+		min-height: 100vh;
+
+		> div[role='group'] {
+			min-height: 100vh;
+
+			display: grid;
+			place-items: center;
+		}
+	}
+
+	a {
+		color: var(--primary);
+
+		&:hover {
+			color: var(--secondary);
+		}
+	}
+
+	*:focus {
+		outline: var(--secondary) auto 5px;
+	}
 `;
 
 const Main = styled.main`
-	background-color: white;
+	background-color: #ffffff;
+	border-radius: 5px;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 	margin: 0 auto;
-	min-height: 80vh;
-	width: 500px;
+	max-width: 600px;
+	padding: var(--gutter);
 `;
 
 const Layout = ({ children, color, title }) => (

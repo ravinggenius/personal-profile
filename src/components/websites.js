@@ -3,7 +3,9 @@ import styled from 'react-emotion';
 
 import Section from './section';
 
-const Anchor = styled.a``;
+const Anchor = styled.a`
+	display: block;
+`;
 
 const Websites = ({ websites }) => {
 	if (websites.length) {
