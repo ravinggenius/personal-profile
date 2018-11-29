@@ -3,6 +3,8 @@ import styled from 'react-emotion';
 
 import Section from './section';
 
+const Aside = styled(Section.withComponent('aside'))``;
+
 const Anchor = styled.a`
 	display: block;
 `;
@@ -10,13 +12,13 @@ const Anchor = styled.a`
 const Websites = ({ websites }) => {
 	if (websites.length) {
 		return (
-			<Section>
+			<Aside>
 				{websites.map(({ name, url }) => (
 					<Anchor href={url} key={url}>
 						{name}
 					</Anchor>
 				))}
-			</Section>
+			</Aside>
 		);
 	}
 };
