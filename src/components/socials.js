@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import styled from 'react-emotion';
 
 import Section from './section';
 import Email from './socials/email';
 import Phone from './socials/phone';
 import ThirdParty from './socials/third_party';
+import Toggle from './socials/toggle';
 
 const Wrapper = styled(Section)`
 	display: flex;
@@ -12,21 +13,43 @@ const Wrapper = styled(Section)`
 	flex-wrap: wrap;
 `;
 
-const Socials = ({ email, phone, socials }) => {
-	if (email || phone || socials.length) {
-		return (
-			<Wrapper>
-				<Phone display={phone} />
-				<Email {...{ email }} />
-				{socials.map(({ code, handle }) => (
-					<ThirdParty
-						{...{ code, handle }}
-						key={`${code}-${handle}`}
+class Socials extends PureComponent {
+	state = {
+		isToggleOpen: false
+	};
+
+	handleToggle = () => {
+		this.setState(({ isToggleOpen }) => ({
+			isToggleOpen: !isToggleOpen
+		}));
+	};
+
+	render() {
+		const { email, phone, socials } = this.props;
+		const { isToggleOpen } = this.state;
+
+		if (email || phone || socials.length) {
+			return (
+				<Wrapper>
+					<Phone display={phone} />
+					<Email {...{ email }} />
+
+					{isToggleOpen &&
+						socials.map(({ code, handle }) => (
+							<ThirdParty
+								{...{ code, handle }}
+								key={`${code}-${handle}`}
+							/>
+						))}
+
+					<Toggle
+						isOpen={isToggleOpen}
+						onToggle={this.handleToggle}
 					/>
-				))}
-			</Wrapper>
-		);
+				</Wrapper>
+			);
+		}
 	}
-};
+}
 
 export default Socials;
