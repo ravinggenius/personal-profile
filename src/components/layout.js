@@ -52,7 +52,7 @@ const Main = styled.main`
 	padding: var(--gutter);
 `;
 
-const Layout = ({ children, color, title }) => (
+const Layout = ({ children, primary, secondary = null, title }) => (
 	<Main>
 		<Helmet>
 			<html lang="en" />
@@ -61,13 +61,13 @@ const Layout = ({ children, color, title }) => (
 
 			<meta name="description" contents="Sample" />
 			<meta name="keywords" contents="sample, something" />
-			<meta name="theme-color" contents={color} />
+			<meta name="theme-color" contents={primary} />
 
 			<body
 				className={bodyStyles}
 				css={`
-					--primary: ${color};
-					--secondary: ${generateSecondary(color)};
+					--primary: ${primary};
+					--secondary: ${secondary || generateSecondary(primary)};
 				`}
 			/>
 		</Helmet>

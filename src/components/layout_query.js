@@ -10,7 +10,8 @@ const LayoutQuery = ({ children }) => (
 			query SiteTitleQuery {
 				profile: markdownRemark(fields: { slug: { eq: "/profile" } }) {
 					frontmatter {
-						color
+						primary
+						secondary
 					}
 				}
 				site {
