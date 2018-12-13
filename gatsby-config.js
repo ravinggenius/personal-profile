@@ -15,6 +15,7 @@ module.exports = {
 		},
 		'gatsby-plugin-offline',
 		'gatsby-plugin-react-helmet',
+		'gatsby-plugin-sharp',
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
@@ -23,7 +24,15 @@ module.exports = {
 				ignore: ['**/.*.md']
 			}
 		},
-		'gatsby-transformer-remark'
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				name: 'images',
+				path: `${__dirname}/src/images`
+			}
+		},
+		'gatsby-transformer-remark',
+		'gatsby-transformer-sharp'
 	],
 	siteMetadata: {
 		title: 'Gatsby Default Starter'

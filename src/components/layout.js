@@ -1,66 +1,80 @@
-import { StaticQuery, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
-import styled, { injectGlobal } from 'react-emotion';
+import styled, { css } from 'react-emotion';
 import Helmet from 'react-helmet';
 
 import 'normalize.css';
 
-injectGlobal`
-	body {
-		--angle: calc(90deg + 75deg);
-		--primary: darkslateblue;
-		--secondary: aquamarine;
-		background-attachment: fixed;
-		background-color: var(--primary);
-		background-image: linear-gradient(
-			var(--angle),
-			var(--primary) 0,
-			var(--primary) 30%,
-			var(--secondary) 100%
-		);
+import { generateSecondary } from '../utilities/color';
+
+const bodyStyles = css`
+	--angle: calc(90deg + 75deg);
+	--gutter: 20px;
+	background-attachment: fixed;
+	background-color: var(--primary);
+	background-image: linear-gradient(
+		var(--angle),
+		var(--primary) 0,
+		var(--primary) 30%,
+		var(--secondary) 100%
+	);
+	font-family: sans-serif;
+	min-height: 100vh;
+
+	> div#___gatsby {
 		min-height: 100vh;
+
+		> div[role='group'] {
+			min-height: 100vh;
+
+			display: grid;
+			place-items: center;
+		}
+	}
+
+	a {
+		color: var(--primary);
+
+		&:hover {
+			color: var(--secondary);
+		}
+	}
+
+	*:focus {
+		outline: var(--secondary) auto 5px;
 	}
 `;
 
 const Main = styled.main`
-	background-color: white;
+	background-color: #ffffff;
+	border-radius: 5px;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 	margin: 0 auto;
-	min-height: 80vh;
-	width: 500px;
+	max-width: 600px;
+	padding: var(--gutter);
 `;
 
-const Layout = ({ children }) => (
-	<StaticQuery
-		query={graphql`
-			query SiteTitleQuery {
-				site {
-					siteMetadata {
-						title
-					}
-				}
-			}
-		`}
-		render={data => (
-			<Main>
-				<Helmet
-					title={data.site.siteMetadata.title}
-					meta={[
-						{ name: 'description', content: 'Sample' },
-						{ name: 'keywords', content: 'sample, something' }
-					]}
-				>
-					<html lang="en" />
-				</Helmet>
+const Layout = ({ children, color, title }) => (
+	<Main>
+		<Helmet>
+			<html lang="en" />
 
-				{children}
-			</Main>
-		)}
-	/>
+			<title>{title}</title>
+
+			<meta name="description" contents="Sample" />
+			<meta name="keywords" contents="sample, something" />
+			<meta name="theme-color" contents={color} />
+
+			<body
+				className={bodyStyles}
+				css={`
+					--primary: ${color};
+					--secondary: ${generateSecondary(color)};
+				`}
+			/>
+		</Helmet>
+
+		{children}
+	</Main>
 );
-
-Layout.propTypes = {
-	children: PropTypes.node.isRequired
-};
 
 export default Layout;

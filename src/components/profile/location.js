@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'react-emotion';
 
-const Address = styled.address``;
+const Address = styled.address`
+	font-style: normal;
+`;
 
 const Location = ({ location }) => <Address>{location}</Address>;
 

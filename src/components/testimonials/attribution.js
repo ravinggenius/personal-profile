@@ -11,7 +11,9 @@ const Attribution = ({ name, relationship, url }) => {
 	return (
 		<Footer>
 			<Cite>
-				{mention} {relationship}
+				{mention}
+				{name && relationship ? ', ' : null}
+				{relationship}
 			</Cite>
 		</Footer>
 	);
