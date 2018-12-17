@@ -16,6 +16,8 @@ const LayoutQuery = ({ children }) => (
 				}
 				site {
 					siteMetadata {
+						description
+						keywords
 						title
 					}
 				}

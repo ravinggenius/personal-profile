@@ -52,15 +52,22 @@ const Main = styled.main`
 	padding: var(--gutter);
 `;
 
-const Layout = ({ children, primary, secondary = null, title }) => (
+const Layout = ({
+	children,
+	description,
+	keywords,
+	primary,
+	secondary = null,
+	title
+}) => (
 	<Main>
 		<Helmet>
 			<html lang="en" />
 
 			<title>{title}</title>
 
-			<meta name="description" contents="Sample" />
-			<meta name="keywords" contents="sample, something" />
+			<meta name="description" contents={description} />
+			<meta name="keywords" contents={keywords.join(',')} />
 			<meta name="theme-color" contents={primary} />
 
 			<body
