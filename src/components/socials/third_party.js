@@ -9,6 +9,7 @@ import {
 	faTwitter,
 	faYoutube
 } from '@fortawesome/free-brands-svg-icons';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import React from 'react';
 import styled, { css } from 'react-emotion';
 
@@ -23,7 +24,7 @@ export const iconStyles = css`
 	text-decoration: none;
 `;
 
-const Anchor = styled.a``;
+const Anchor = styled(OutboundLink)``;
 
 export const Label = styled.span`
 	font-size: small;

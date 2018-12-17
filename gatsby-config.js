@@ -1,6 +1,16 @@
+const config = require('./config');
+
 module.exports = {
 	plugins: [
 		'gatsby-plugin-emotion',
+		{
+			resolve: 'gatsby-plugin-google-analytics',
+			options: {
+				trackingId: config.googleAnalyticsId,
+				anonymize: true,
+				respectDNT: true
+			}
+		},
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {

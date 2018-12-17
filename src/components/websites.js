@@ -1,3 +1,4 @@
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import React from 'react';
 import styled from 'react-emotion';
 
@@ -5,7 +6,7 @@ import Section from './section';
 
 const Aside = styled(Section.withComponent('aside'))``;
 
-const Anchor = styled.a`
+const Anchor = styled(OutboundLink)`
 	display: block;
 	width: fit-content;
 `;
