@@ -1,8 +1,8 @@
+import 'normalize.css';
+
 import React from 'react';
 import styled, { css } from 'react-emotion';
 import Helmet from 'react-helmet';
-
-import 'normalize.css';
 
 import { generateSecondary } from '../utilities/color';
 
@@ -21,12 +21,11 @@ const bodyStyles = css`
 	min-height: 100vh;
 
 	> div#___gatsby {
-		min-height: 100vh;
+		min-height: inherit;
 
 		> div[role='group'] {
-			min-height: 100vh;
-
 			display: grid;
+			min-height: inherit;
 			place-items: center;
 		}
 	}
