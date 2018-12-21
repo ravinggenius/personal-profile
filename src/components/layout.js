@@ -48,9 +48,29 @@ const Main = styled.main`
 	background-color: #ffffff;
 	border-radius: calc(var(--gutter) / 4);
 	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+	display: grid;
+	grid-template-areas:
+		'.               avatar               .'
+		'profile        profile         profile'
+		'bio              bio               bio'
+		'websites       websites       websites'
+		'testimonials testimonials testimonials'
+		'socials         socials        socials';
+	grid-template-columns: 1fr auto 1fr;
 	margin: 0 auto;
 	max-width: 600px;
 	padding: var(--gutter);
+
+	@media (min-width: 450px) {
+		grid-column-gap: var(--gutter);
+		grid-template-areas:
+			'avatar            profile'
+			'bio                   bio'
+			'websites         websites'
+			'testimonials testimonials'
+			'socials           socials';
+		grid-template-columns: auto 1fr;
+	}
 `;
 
 const Layout = ({

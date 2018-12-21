@@ -10,6 +10,7 @@ const Header = styled(Section.withComponent('header'))`
 	align-items: center;
 	display: flex;
 	flex-direction: column;
+	grid-area: profile;
 	justify-content: center;
 `;
 

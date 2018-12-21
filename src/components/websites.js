@@ -4,7 +4,9 @@ import styled from 'react-emotion';
 
 import Section from './section';
 
-const Aside = styled(Section.withComponent('aside'))``;
+const Aside = styled(Section.withComponent('aside'))`
+	grid-area: websites;
+`;
 
 const Anchor = styled(OutboundLink)`
 	display: block;

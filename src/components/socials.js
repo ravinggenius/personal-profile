@@ -9,6 +9,7 @@ import Toggle from './socials/toggle';
 
 const Wrapper = styled(Section)`
 	display: flex;
+	grid-area: socials;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
 `;
