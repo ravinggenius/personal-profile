@@ -18,7 +18,8 @@ const bodyStyles = css`
 		var(--secondary) 100%
 	);
 	font-family: sans-serif;
-	min-height: 100vh;
+	min-height: calc(100vh - (var(--gutter) * 2));
+	padding: var(--gutter);
 
 	> div#___gatsby {
 		min-height: inherit;
