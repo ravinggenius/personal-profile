@@ -6,7 +6,7 @@ import Testimonial from './testimonials/testimonial';
 const Testimonials = ({ testimonials }) => {
 	if (testimonials.length) {
 		return (
-			<Section>
+			<Section css="grid-area: testimonials;">
 				{testimonials.map(
 					({ attribution, body, id, relationship, url }) => (
 						<Testimonial

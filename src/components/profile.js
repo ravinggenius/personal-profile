@@ -7,7 +7,11 @@ import Name from './profile/name';
 import Section from './section';
 
 const Header = styled(Section.withComponent('header'))`
-	text-align: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	grid-area: profile;
+	justify-content: center;
 `;
 
 const Profile = ({ name, introduction, location }) => (

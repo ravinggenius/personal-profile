@@ -1,16 +1,26 @@
+const config = require('./config');
+
 module.exports = {
 	plugins: [
 		'gatsby-plugin-emotion',
 		{
+			resolve: 'gatsby-plugin-google-analytics',
+			options: {
+				trackingId: config.googleAnalyticsId,
+				anonymize: true,
+				respectDNT: true
+			}
+		},
+		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: 'gatsby-starter-default',
-				short_name: 'starter',
+				name: config.name,
+				short_name: config.shortName,
 				start_url: '/',
-				background_color: '#663399',
-				theme_color: '#663399',
-				display: 'minimal-ui',
-				icon: 'src/images/gatsby-icon.png' // This path is relative to the root of the site.
+				background_color: config.themeColor,
+				theme_color: config.themeColor,
+				display: 'standalone',
+				icon: 'src/images/profile.jpeg'
 			}
 		},
 		'gatsby-plugin-offline',
@@ -35,6 +45,8 @@ module.exports = {
 		'gatsby-transformer-sharp'
 	],
 	siteMetadata: {
-		title: 'Gatsby Default Starter'
+		description: config.description,
+		keywords: config.keywords,
+		title: config.name
 	}
 };
