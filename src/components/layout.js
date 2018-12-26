@@ -45,7 +45,7 @@ const bodyStyles = css`
 
 const Main = styled.main`
 	background-color: #ffffff;
-	border-radius: 5px;
+	border-radius: calc(var(--gutter) / 4);
 	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 	margin: 0 auto;
 	max-width: 600px;

@@ -7,6 +7,7 @@ const Aside = styled(Section.withComponent('aside'))``;
 
 const Anchor = styled.a`
 	display: block;
+	width: fit-content;
 `;
 
 const Websites = ({ websites }) => {
