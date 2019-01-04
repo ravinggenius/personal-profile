@@ -6,15 +6,15 @@ import Obfuscate from 'react-obfuscate';
 
 import { Label, iconStyles } from './third_party';
 
-const Inner = styled(Obfuscate)``;
+const Anchor = styled(Obfuscate)``;
 
 const Email = ({ email }) => {
 	if (email) {
 		return (
-			<Inner css={iconStyles} {...{ email }}>
+			<Anchor css={iconStyles} {...{ email }}>
 				<FontAwesomeIcon fixedWidth icon={faEnvelope} />
 				<Label>Email</Label>
-			</Inner>
+			</Anchor>
 		);
 	}
 };

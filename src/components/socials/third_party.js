@@ -37,7 +37,7 @@ const resolve = (code, handle) =>
 			faFacebook,
 			`https://www.facebook.com/${handle}`
 		],
-		github: ['GitHub', faGithub, `https://www.facebook.com/${handle}`],
+		github: ['GitHub', faGithub, `https://github.com/${handle}`],
 		instagram: [
 			'Instagram',
 			faInstagram,
