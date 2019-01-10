@@ -59,10 +59,6 @@ export const iconStyles = css`
 
 const Anchor = styled(OutboundLink)``;
 
-export const Label = styled.span`
-	font-size: small;
-`;
-
 const resolve = (code, handle) =>
 	({
 		'500px': ['500px', fa500px, `https://500px.com/${handle}`],
@@ -201,9 +197,13 @@ const ThirdParty = ({ code, handle }) => {
 
 	if (href) {
 		return (
-			<Anchor {...{ href }} aria-label={label} css={iconStyles}>
+			<Anchor
+				{...{ href }}
+				aria-label={label}
+				css={iconStyles}
+				title={label}
+			>
 				<FontAwesomeIcon fixedWidth {...{ icon }} />
-				<Label>{label}</Label>
 			</Anchor>
 		);
 	}

@@ -4,16 +4,20 @@ import React from 'react';
 import styled from 'react-emotion';
 import Obfuscate from 'react-obfuscate';
 
-import { Label, iconStyles } from './third_party';
+import { iconStyles } from './third_party';
 
 const Anchor = styled(Obfuscate)``;
 
 const Email = ({ email }) => {
 	if (email) {
 		return (
-			<Anchor {...{ email }} aria-label="email" css={iconStyles}>
+			<Anchor
+				{...{ email }}
+				aria-label="email"
+				css={iconStyles}
+				title="Email"
+			>
 				<FontAwesomeIcon fixedWidth icon={faEnvelope} />
-				<Label>Email</Label>
 			</Anchor>
 		);
 	}
