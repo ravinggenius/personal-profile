@@ -201,7 +201,7 @@ const ThirdParty = ({ code, handle }) => {
 
 	if (href) {
 		return (
-			<Anchor css={iconStyles} {...{ href }}>
+			<Anchor {...{ href }} aria-label={label} css={iconStyles}>
 				<FontAwesomeIcon fixedWidth {...{ icon }} />
 				<Label>{label}</Label>
 			</Anchor>

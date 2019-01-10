@@ -11,7 +11,7 @@ const Anchor = styled(Obfuscate)``;
 const Email = ({ email }) => {
 	if (email) {
 		return (
-			<Anchor css={iconStyles} {...{ email }}>
+			<Anchor {...{ email }} aria-label="email" css={iconStyles}>
 				<FontAwesomeIcon fixedWidth icon={faEnvelope} />
 				<Label>Email</Label>
 			</Anchor>

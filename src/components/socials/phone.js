@@ -15,7 +15,7 @@ const Phone = ({ display }) => {
 
 		if (telephone) {
 			return (
-				<Anchor css={iconStyles} tel={telephone}>
+				<Anchor aria-label="phone" css={iconStyles} tel={telephone}>
 					<FontAwesomeIcon fixedWidth icon={faPhone} />
 					<Label>Phone</Label>
 				</Anchor>
