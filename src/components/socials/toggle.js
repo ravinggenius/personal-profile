@@ -16,7 +16,11 @@ const Button = styled.button`
 `;
 
 const Toggle = ({ isOpen, onToggle }) => (
-	<Button css={iconStyles} onClick={onToggle}>
+	<Button
+		aria-label={isOpen ? 'collapse' : 'expand'}
+		css={iconStyles}
+		onClick={onToggle}
+	>
 		<FontAwesomeIcon fixedWidth icon={isOpen ? faMinus : faPlus} />
 	</Button>
 );
