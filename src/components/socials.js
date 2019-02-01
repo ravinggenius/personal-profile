@@ -1,5 +1,5 @@
+import styled from '@emotion/styled';
 import React, { PureComponent } from 'react';
-import styled from 'react-emotion';
 
 import Section from './section';
 import Email from './socials/email';

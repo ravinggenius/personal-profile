@@ -1,7 +1,7 @@
+import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
-import styled from 'react-emotion';
 import Obfuscate from 'react-obfuscate';
 
 import { iconStyles } from './third_party';

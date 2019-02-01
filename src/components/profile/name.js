@@ -1,5 +1,5 @@
+import styled from '@emotion/styled';
 import React from 'react';
-import styled from 'react-emotion';
 
 const H1 = styled.h1`
 	font-variant: small-caps;

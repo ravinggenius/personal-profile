@@ -1,6 +1,6 @@
+import styled from '@emotion/styled';
 import Img from 'gatsby-image';
 import React from 'react';
-import styled from 'react-emotion';
 
 const Image = styled(Img)`
 	border-radius: 50%;

@@ -1,6 +1,6 @@
+import styled from '@emotion/styled';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import React from 'react';
-import styled from 'react-emotion';
 
 const Anchor = styled(OutboundLink)``;
 const Footer = styled.footer``;
