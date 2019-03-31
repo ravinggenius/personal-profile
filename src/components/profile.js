@@ -1,5 +1,5 @@
+import styled from '@emotion/styled';
 import React from 'react';
-import styled from 'react-emotion';
 
 import Introduction from './profile/introduction';
 import Location from './profile/location';
