@@ -1,3 +1,5 @@
+import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	fa500px,
@@ -44,7 +46,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import React from 'react';
-import styled, { css } from 'react-emotion';
 
 export const iconStyles = css`
 	align-items: center;
